@@ -1,0 +1,140 @@
+<section class="section-content padding-y">
+
+    <!-- ============================ COMPONENT REGISTER   ================================= -->
+        <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+          <article class="card-body">
+            
+            <header class="mb-4"><h4 class="card-title">Sign up</h4></header>
+            <form action="{% url 'register' %}" method="post" id="registration">
+                {% csrf_token %}
+                
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>First name</label>
+                              {{form.first_name}}
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group col-md-6">
+                            <label>Last name</label>
+                              {{form.last_name}}
+                        </div> 
+                    </div> <!-- form-row end.// -->
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Email Address</label>
+                         {{form.email}}
+                        </div> <!-- form-group end.// -->
+                        <div class="form-group col-md-6">
+                          <label>Phone Number</label>
+                          {{form.phone_number}}
+                        </div> <!-- form-group end.// -->
+                    </div> <!-- form-row.// -->
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Create password</label>
+                            {{form.password}}
+                        </div> <!-- form-group end.// --> 
+                        <div class="form-group col-md-6">
+                            <label>Repeat password</label>
+                            {{form.confirm_password}}
+                        </div> <!-- form-group end.// -->  
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" style="background-color: rgb(175, 164, 66); "class="btn btn-primary btn-block"> Register  </button>
+                    </div> <!-- form-group// -->      
+                        {{ form.email.errors }}
+                        {{ form.non_field_errors }}
+                        <style>
+                            .error{
+                                color: red!important;
+                            }
+                        </style>
+                </form>
+            </article><!-- card-body.// -->
+        </div> <!-- card .// -->
+        <p class="text-center mt-4">Have an account? <a href="">Log In</a></p>
+        <br><br>
+    <!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+        
+    
+    
+
+
+
+
+
+<!-- {% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Askbootstrap">
+<meta name="author" content="Askbootstrap">
+<title>Osahan Eat - Online Food Ordering Website HTML Template</title>
+
+<link rel="icon" type="image/png" href="img/favicon.png">
+
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<link href="{% static 'vendor/fontawesome/css/all.min.css' %}" rel="stylesheet">
+
+<link href="{% static 'vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+
+<link href="{% static 'vendor/select2/css/select2.min.css' %}" rel="stylesheet">
+
+<link href="{% static 'css/osahan.css' %}" rel="stylesheet">
+</head>
+<body class="bg-white">
+<div class="container-fluid">
+<div class="row no-gutter">
+<div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+<div class="col-md-8 col-lg-6">
+<div class="login d-flex align-items-center py-5">
+<div class="container">
+<div class="row">
+<div class="col-md-9 col-lg-8 mx-auto pl-5 pr-5">
+<h3 class="login-heading mb-4">New Buddy!</h3>
+<form>
+<div class="form-label-group">
+<input type="email" id="inputEmail" class="form-control" placeholder="Email address">
+<label for="inputEmail">Email address / Mobile</label>
+</div>
+<div class="form-label-group">
+<input type="password" id="inputPassword" class="form-control" placeholder="Password">
+<label for="inputPassword">Password</label>
+</div>
+<div class="form-label-group mb-4">
+<input type="text" id="ptext" class="form-control" placeholder="Promocode">
+<label for="ptext">Promocode</label>
+</div>
+<a href="index.html" class="btn btn-lg btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Sign Up</a>
+<div class="text-center pt-3">
+Already have an Account? <a class="font-weight-bold" href="login.html">Sign In</a>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="{% static 'vendor/jquery/jquery-3.3.1.slim.min.js' %}" type="be73e51eed03a1ebe4d62a0d-text/javascript"></script>
+
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}" type="be73e51eed03a1ebe4d62a0d-text/javascript"></script>
+
+<script src="{% static 'vendor/select2/js/select2.min.js' %}" type="be73e51eed03a1ebe4d62a0d-text/javascript"></script>
+
+<script src="{% static 'js/custom.js' %}" type="be73e51eed03a1ebe4d62a0d-text/javascript"></script>
+<script src="{% static '/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js' %}" data-cf-settings="be73e51eed03a1ebe4d62a0d-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6d51a5745a608a14","version":"2021.12.0","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+</body>
+</html> -->
